@@ -10,7 +10,7 @@ import Foundation
 
 // Thanks to Rob from this stackoverflow question: https://stackoverflow.com/questions/43561169/trying-to-understand-asynchronous-operation-subclass
 // The code from AsynchronousOperation and NetworkOperation is from his answer
-class AsynchronousOperation: Operation {
+public class AsynchronousOperation: Operation {
     
     @objc public enum OperationState: Int {
         case ready
@@ -31,7 +31,7 @@ class AsynchronousOperation: Operation {
     }
     
     /// Override default so we can decide when it is finished
-    open override var isReady: Bool {
+    public override var isReady: Bool {
         return state == .ready && super.isReady
     }
     public override var isExecuting: Bool {
@@ -42,7 +42,7 @@ class AsynchronousOperation: Operation {
     }
     
     /// KVN for dependent properties
-    open override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
+    public override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
         if ["isReady", "isFinished", "isExecuting"].contains(key) {
             return [#keyPath(state)]
         }
@@ -61,7 +61,7 @@ class AsynchronousOperation: Operation {
         main()
     }
     
-    open override func main() {
+    public override func main() {
         fatalError("subclass must implement")
     }
     

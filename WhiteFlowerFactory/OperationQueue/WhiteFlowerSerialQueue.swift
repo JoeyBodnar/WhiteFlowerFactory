@@ -9,12 +9,12 @@
 import Foundation
 
 /// Used for creating a queue of network requests to be ran serially
-class WhiteFlowerSerialQueue {
-    open var operationQueue: OperationQueue
+public class WhiteFlowerSerialQueue {
+    public var operationQueue: OperationQueue
     
-    open var responses = [APIResponse]()
+    public var responses = [APIResponse]()
     
-    init(operationQueue: OperationQueue = OperationQueue()) {
+    public init(operationQueue: OperationQueue = OperationQueue()) {
         self.operationQueue = operationQueue
         self.operationQueue.maxConcurrentOperationCount = 1
     }

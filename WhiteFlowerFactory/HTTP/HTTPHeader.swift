@@ -12,7 +12,7 @@ public class HTTPHeader {
     let field: String
     let value: String
     
-    init(field: String, value: String) {
+    public init(field: String, value: String) {
         self.field = field
         self.value = value
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias APIResult = Result<Data?, NetworkError>
+public typealias APIResult = Result<Data?, NetworkError>
 
 /// The response to all API calls
 public class APIResponse {
