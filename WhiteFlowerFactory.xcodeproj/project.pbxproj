@@ -17,7 +17,7 @@
 		9F53B7782307DB6400515CA0 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7732307DB6400515CA0 /* HTTPHeader.swift */; };
 		9F53B7792307DB6400515CA0 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7722307DB6400515CA0 /* HTTPHeaderField.swift */; };
 		9F53B77C2307DB6D00515CA0 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */; };
-		9F53B77D2307DB6D00515CA0 /* SerialOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77B2307DB6D00515CA0 /* SerialOperation.swift */; };
+		9F53B77D2307DB6D00515CA0 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77B2307DB6D00515CA0 /* AsynchronousOperation.swift */; };
 		9F53B77F2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */; };
 		9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
 		9F53B7832307DB7400515CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
@@ -48,7 +48,7 @@
 		9F53B7742307DB6400515CA0 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		9F53B7752307DB6400515CA0 /* HTTPContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPContentType.swift; sourceTree = "<group>"; };
 		9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
-		9F53B77B2307DB6D00515CA0 /* SerialOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerialOperation.swift; sourceTree = "<group>"; };
+		9F53B77B2307DB6D00515CA0 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
 		9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerSerialQueue.swift; sourceTree = "<group>"; };
 		9F53B7802307DB7400515CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9F53B7812307DB7400515CA0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -80,6 +80,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9FA4F1AF2308517500E87808 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				9F53B7752307DB6400515CA0 /* HTTPContentType.swift */,
+				9F53B7732307DB6400515CA0 /* HTTPHeader.swift */,
+				9F53B7722307DB6400515CA0 /* HTTPHeaderField.swift */,
+				9F53B7742307DB6400515CA0 /* HTTPMethod.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		9FA4F1B02308518100E87808 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				9F53B7622307D9FB00515CA0 /* APIResponse.swift */,
+				9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		9FA4F1B12308519000E87808 /* OperationQueue */ = {
+			isa = PBXGroup;
+			children = (
+				9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */,
+				9F53B77B2307DB6D00515CA0 /* AsynchronousOperation.swift */,
+				9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */,
+			);
+			path = OperationQueue;
+			sourceTree = "<group>";
+		};
+		9FA4F1B2230851A400E87808 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F53B7802307DB7400515CA0 /* Extensions.swift */,
+				9F53B7812307DB7400515CA0 /* Protocols.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9FA4F1B3230851B500E87808 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				9F53B7632307D9FB00515CA0 /* NetworkError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		9FF434462307015100B6C7AB = {
 			isa = PBXGroup;
 			children = (
@@ -102,20 +149,13 @@
 		9FF434522307015100B6C7AB /* WhiteFlowerFactory */ = {
 			isa = PBXGroup;
 			children = (
-				9F53B7622307D9FB00515CA0 /* APIResponse.swift */,
-				9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */,
-				9F53B7632307D9FB00515CA0 /* NetworkError.swift */,
 				9F53B7642307D9FB00515CA0 /* WhiteFlower.swift */,
 				9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */,
-				9F53B7752307DB6400515CA0 /* HTTPContentType.swift */,
-				9F53B7732307DB6400515CA0 /* HTTPHeader.swift */,
-				9F53B7722307DB6400515CA0 /* HTTPHeaderField.swift */,
-				9F53B7742307DB6400515CA0 /* HTTPMethod.swift */,
-				9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */,
-				9F53B77B2307DB6D00515CA0 /* SerialOperation.swift */,
-				9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */,
-				9F53B7802307DB7400515CA0 /* Extensions.swift */,
-				9F53B7812307DB7400515CA0 /* Protocols.swift */,
+				9FA4F1AF2308517500E87808 /* HTTP */,
+				9FA4F1B02308518100E87808 /* Response */,
+				9FA4F1B12308519000E87808 /* OperationQueue */,
+				9FA4F1B3230851B500E87808 /* Error */,
+				9FA4F1B2230851A400E87808 /* Utils */,
 				9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */,
 				9FF434542307015100B6C7AB /* Info.plist */,
 			);
@@ -249,7 +289,7 @@
 				9F53B7682307D9FB00515CA0 /* NetworkError.swift in Sources */,
 				9F53B7782307DB6400515CA0 /* HTTPHeader.swift in Sources */,
 				9F53B7662307D9FB00515CA0 /* DataTaskResponse.swift in Sources */,
-				9F53B77D2307DB6D00515CA0 /* SerialOperation.swift in Sources */,
+				9F53B77D2307DB6D00515CA0 /* AsynchronousOperation.swift in Sources */,
 				9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */,
 				9F53B7692307D9FB00515CA0 /* WhiteFlower.swift in Sources */,
 				9F53B7792307DB6400515CA0 /* HTTPHeaderField.swift in Sources */,

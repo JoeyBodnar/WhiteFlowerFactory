@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name = "WhiteFlowerFactory"
-  spec.version = "0.0.1"
+  spec.version = "0.1.0"
   spec.summary  = "A simple URLSession wrapper"
 
   spec.license = { :type => "MIT", :file => "LICENSE" }

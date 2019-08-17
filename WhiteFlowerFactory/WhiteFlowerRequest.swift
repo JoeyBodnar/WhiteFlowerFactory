@@ -1,6 +1,6 @@
 //
 //  SerialQueueRequest.swift
-//  NetworkingFramework
+//  WhiteFlowerFactory
 //
 //  Created by Stephen Bodnar on 8/15/19.
 //  Copyright © 2019 Stephen Bodnar. All rights reserved.
@@ -10,7 +10,7 @@ import Foundation
 
 /// Just a simple abstraction on top of URLRequest.
 /// To make a request with WhiteFlower, you must first create a white flower request. All network requests are routed through this class. 
-class WhiteFlowerRequest {
+public class WhiteFlowerRequest {
     var urlString: String
     var method: HTTPMethod
     

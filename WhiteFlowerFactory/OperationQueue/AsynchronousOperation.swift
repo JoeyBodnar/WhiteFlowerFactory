@@ -1,6 +1,6 @@
 //
 //  SerialOperation.swift
-//  NetworkingFramework
+//  WhiteFlowerFactory
 //
 //  Created by Stephen Bodnar on 8/15/19.
 //  Copyright © 2019 Stephen Bodnar. All rights reserved.
@@ -8,7 +8,9 @@
 
 import Foundation
 
-class SerialOperation: Operation {
+// Thanks to Rob from this stackoverflow question: https://stackoverflow.com/questions/43561169/trying-to-understand-asynchronous-operation-subclass
+// The code from AsynchronousOperation and NetworkOperation is from his answer
+class AsynchronousOperation: Operation {
     
     @objc public enum OperationState: Int {
         case ready

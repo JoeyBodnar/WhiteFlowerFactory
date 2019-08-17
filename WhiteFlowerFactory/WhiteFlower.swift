@@ -1,6 +1,6 @@
 //
 //  APIRequest.swift
-//  NetworkingFramework
+//  WhiteFlowerFactory
 //
 //  Created by Stephen Bodnar on 8/13/19.
 //  Copyright © 2019 Stephen Bodnar. All rights reserved.
@@ -8,20 +8,18 @@
 
 import Foundation
 
-typealias DataTaskCompletion = (APIResponse) -> Void
+public typealias DataTaskCompletion = (APIResponse) -> Void
 
-class WhiteFlower {
+public class WhiteFlower {
     
-    static let shared = WhiteFlower()
+    public static let shared = WhiteFlower()
     
-    static var defaultHeaders: [HTTPHeader] = [HTTPHeader(field: HTTPHeaderField.contentType.rawValue, value: HTTPContentType.json.rawValue)]
-    
-    /// Alll individual requests are routed through here. the only requests that are not routed through this function are the
+    /// All individual requests are routed through here. the only requests that are not routed through this function are the
     /// requests executed by a WhiteFlowerSerialQueue
     fileprivate func request(_ method: HTTPMethod, withURL urlString: String, withParams params: [String: Any]?, andHeaders headers: [HTTPHeader]?, completion: @escaping(DataTaskCompletion)) {
         guard let _ = URL(string: urlString) else {
             completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
-
+            
             return
         }
         
@@ -54,27 +52,19 @@ extension WhiteFlower {
     }
     
     public func get<T: Provider>(endPoint: T, completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: endPoint.path, withParams: nil, andHeaders: nil) { (result) in
-            completion(result)
-        }
+        request(.get, withURL: endPoint.path, withParams: nil, andHeaders: nil, completion: completion)
     }
     
     public func get(urlString: String, headers: [HTTPHeader], completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: urlString, withParams: nil, andHeaders: headers) { (result) in
-            completion(result)
-        }
+        request(.get, withURL: urlString, withParams: nil, andHeaders: headers, completion: completion)
     }
     
     public func get<T: Provider>(endPoint: T, headers: [HTTPHeader], completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: endPoint.path, withParams: nil, andHeaders: headers) { (result) in
-            completion(result)
-        }
+        request(.get, withURL: endPoint.path, withParams: nil, andHeaders: headers, completion: completion)
     }
     
     public func get(urlString: String, completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: urlString, withParams: nil, andHeaders: nil) { (result) in
-            completion(result)
-        }
+        request(.get, withURL: urlString, withParams: nil, andHeaders: nil, completion: completion)
     }
     
     public func post<T: Provider>(endPoint: T, params: [String: Any], headers: [HTTPHeader], completion: @escaping(DataTaskCompletion)) {
@@ -101,5 +91,3 @@ extension WhiteFlower {
         request(.delete, withURL: urlString, withParams: params, andHeaders: headers, completion: completion)
     }
 }
-
-

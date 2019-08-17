@@ -1,6 +1,6 @@
 //
 //  Protocols.swift
-//  NetworkingFramework
+//  WhiteFlowerFactory
 //
 //  Created by Stephen Bodnar on 8/15/19.
 //  Copyright © 2019 Stephen Bodnar. All rights reserved.
@@ -31,7 +31,7 @@ import Foundation
 //        }
 //    }
 
-protocol Provider {
+public protocol Provider {
     var path: String { get }
     var baseURL: String { get }
     static var name: String { get }
