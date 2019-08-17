@@ -12,7 +12,7 @@ import Foundation
 public class WhiteFlowerSerialQueue {
     public var operationQueue: OperationQueue
     
-    public var responses = [APIResponse]()
+    var responses = [APIResponse]()
     
     public init(operationQueue: OperationQueue = OperationQueue()) {
         self.operationQueue = operationQueue

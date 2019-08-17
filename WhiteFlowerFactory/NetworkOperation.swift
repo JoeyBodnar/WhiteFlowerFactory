@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NetworkOperation : AsynchronousOperation {
+class NetworkOperation : AsynchronousOperation {
     var task: URLSessionTask?
     
     init(request: WhiteFlowerRequest, completion: @escaping(DataTaskCompletion)) {
@@ -19,6 +19,7 @@ public class NetworkOperation : AsynchronousOperation {
             cancel()
             return
         }
+        
         task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             defer { self.finish() }
             print("finished")
@@ -27,12 +28,12 @@ public class NetworkOperation : AsynchronousOperation {
         })
     }
     
-    override public func cancel() {
+    override func cancel() {
         task?.cancel()
         super.cancel()
     }
     
-    override public func main() {
+    override func main() {
         task?.resume()
         print("starting")
     }

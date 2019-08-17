@@ -12,10 +12,10 @@ import Foundation
 /// the user might want access to the original data and response that resulted from the session.datatask(with: ..) call
 /// so we wrap that info in this object and pass this back as part of the APIResponse completion
 public class DataTaskResponse {
-    var data: Data?
-    var response: URLResponse?
+    public var data: Data?
+    public var response: URLResponse?
     
-    init(data: Data?, response: URLResponse?) {
+    public init(data: Data?, response: URLResponse?) {
         self.data = data
         self.response = response
     }

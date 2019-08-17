@@ -10,9 +10,9 @@ import Foundation
 
 // Thanks to Rob from this stackoverflow question: https://stackoverflow.com/questions/43561169/trying-to-understand-asynchronous-operation-subclass
 // The code from AsynchronousOperation and NetworkOperation is from his answer
-public class AsynchronousOperation: Operation {
+class AsynchronousOperation: Operation {
     
-    @objc public enum OperationState: Int {
+    @objc enum OperationState: Int {
         case ready
         case executing
         case finished
@@ -31,18 +31,18 @@ public class AsynchronousOperation: Operation {
     }
     
     /// Override default so we can decide when it is finished
-    public override var isReady: Bool {
+    override var isReady: Bool {
         return state == .ready && super.isReady
     }
-    public override var isExecuting: Bool {
+    override var isExecuting: Bool {
         return state == .executing
     }
-    public override var isFinished: Bool {
+    override var isFinished: Bool {
         return state == .finished
     }
     
     /// KVN for dependent properties
-    public override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
+    override class func keyPathsForValuesAffectingValue(forKey key: String) -> Set<String> {
         if ["isReady", "isFinished", "isExecuting"].contains(key) {
             return [#keyPath(state)]
         }
@@ -51,7 +51,7 @@ public class AsynchronousOperation: Operation {
     }
     
     /// Start
-    public final override func start() {
+    final override func start() {
         if isCancelled {
             finish()
             return
@@ -61,11 +61,11 @@ public class AsynchronousOperation: Operation {
         main()
     }
     
-    public override func main() {
+    override func main() {
         fatalError("subclass must implement")
     }
     
-    public final func finish() {
+    final func finish() {
         if !isFinished { state = .finished }
     }
 }

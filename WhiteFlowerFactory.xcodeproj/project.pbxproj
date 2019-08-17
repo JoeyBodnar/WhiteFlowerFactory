@@ -22,6 +22,7 @@
 		9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
 		9F53B7832307DB7400515CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
 		9F53B7852307E3A100515CA0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9F53B7842307E3A100515CA0 /* LICENSE */; };
+		9FCFD8AD230869F200825828 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFD8AC230869F200825828 /* README.md */; };
 		9FF4345A2307015200B6C7AB /* WhiteFlowerFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */; };
 		9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */; };
 		9FF434612307015200B6C7AB /* WhiteFlowerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -53,6 +54,7 @@
 		9F53B7802307DB7400515CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9F53B7812307DB7400515CA0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9F53B7842307E3A100515CA0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FCFD8AC230869F200825828 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhiteFlowerFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhiteFlowerFactory.h; sourceTree = "<group>"; };
 		9FF434542307015100B6C7AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		9FF434462307015100B6C7AB = {
 			isa = PBXGroup;
 			children = (
+				9FCFD8AC230869F200825828 /* README.md */,
 				9F53B7842307E3A100515CA0 /* LICENSE */,
 				9FF434522307015100B6C7AB /* WhiteFlowerFactory */,
 				9FF4345D2307015200B6C7AB /* WhiteFlowerFactoryTests */,
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCFD8AD230869F200825828 /* README.md in Resources */,
 				9F53B7852307E3A100515CA0 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

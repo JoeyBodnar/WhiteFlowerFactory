@@ -12,9 +12,9 @@ public typealias APIResult = Result<Data?, NetworkError>
 
 /// The response to all API calls
 public class APIResponse {
-    var originalRequest: URLRequest? // Requests aborted by invalidURL will not have an originalRequest
-    var dataTaskResponse: DataTaskResponse?
-    var result: APIResult
+    public var originalRequest: URLRequest? // Requests aborted by invalidURL will not have an originalRequest
+    public var dataTaskResponse: DataTaskResponse?
+    public var result: APIResult
     
     init(dataTaskResponse: DataTaskResponse?, result: APIResult, originalRequest: URLRequest?) {
         self.dataTaskResponse = dataTaskResponse
@@ -45,7 +45,7 @@ public class APIResponse {
             let error: APIResult = .failure(.requestFailed(statusCode))
             self.init(dataTaskResponse: originalResponse, result: error, originalRequest: originalRequest)
         case 500..<600: let error: APIResult = .failure(.serverError(statusCode))
-        self.init(dataTaskResponse: originalResponse, result: error, originalRequest: originalRequest)
+            self.init(dataTaskResponse: originalResponse, result: error, originalRequest: originalRequest)
         default:
             self.init(dataTaskResponse: originalResponse, result: .failure(.badRequest(statusCode)), originalRequest: originalRequest)
         }

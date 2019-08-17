@@ -11,12 +11,12 @@ import Foundation
 /// Just a simple abstraction on top of URLRequest.
 /// To make a request with WhiteFlower, you must first create a white flower request. All network requests are routed through this class. 
 public class WhiteFlowerRequest {
-    var urlString: String
-    var method: HTTPMethod
+    public var urlString: String
+    public var method: HTTPMethod
     
-    var endPoint: Provider?
-    var headers: [HTTPHeader]?
-    var params: [String: Any]?
+    public var endPoint: Provider?
+    public var headers: [HTTPHeader]?
+    public var params: [String: Any]?
     
     public init(method: HTTPMethod, urlString: String) {
         self.method = method
@@ -44,7 +44,7 @@ public class WhiteFlowerRequest {
     }
     
     /// The URLRequest for a given instance of WhiteFlowerRequest
-    var urlRequest: URLRequest? {
+    public var urlRequest: URLRequest? {
         if let url = URL(string: urlString) {
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
