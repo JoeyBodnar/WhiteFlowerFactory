@@ -48,14 +48,22 @@ public class WhiteFlowerRequest {
         if let url = URL(string: urlString) {
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
-            if method != .get {
+            if method == .post || method == .put || method == .patch || method == .delete {
                 request.setValue(HTTPContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
             }
-            do {
-                if let postBody = params {
-                    request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
-                } else { print("params were nil") }
-            } catch { print("couldnt set http body of page view") }
+            if let postBody = params {
+                if let unwrappedHeaders = headers {
+                    if unwrappedHeaders.containsUrlEncoded {
+                        request.httpBody = postBody.urlEncoded()
+                    } else {
+                        do {
+                            request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
+                        } catch {
+                            return nil
+                        }
+                    }
+                }
+            } else { print("params were nil") }
             
             if let unwrappedHeaders = headers {
                 for header in unwrappedHeaders {
@@ -68,4 +76,5 @@ public class WhiteFlowerRequest {
             return nil
         }
     }
+    
 }
