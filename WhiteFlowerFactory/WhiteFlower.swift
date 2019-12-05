@@ -16,7 +16,7 @@ public class WhiteFlower {
     
     /// All individual requests are routed through here. the only requests that are not routed through this function are the
     /// requests executed by a WhiteFlowerSerialQueue
-    fileprivate func request(_ method: HTTPMethod, withURL urlString: String, withParams params: [String: Any]?, andHeaders headers: [HTTPHeader]?, completion: @escaping(DataTaskCompletion)) {
+    private func request(_ method: HTTPMethod, withURL urlString: String, withParams params: [String: Any]?, andHeaders headers: [HTTPHeader]?, completion: @escaping(DataTaskCompletion)) {
         guard let _ = URL(string: urlString) else {
             completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
             
