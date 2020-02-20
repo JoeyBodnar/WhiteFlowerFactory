@@ -58,11 +58,14 @@ public class WhiteFlowerRequest {
                     } else {
                         do {
                             request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        } catch {
-                            return nil
-                        }
+                        } catch { return nil }
                     }
+                } else {
+                    do {
+                        request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
+                    } catch { return nil }
                 }
+                
             } else { print("params were nil") }
             
             if let unwrappedHeaders = headers {
