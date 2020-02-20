@@ -9,7 +9,7 @@
 import Foundation
 
 public enum HTTPHeaderField: String {
-    case authentication = "Authorization"
+    case authorization = "Authorization"
     case contentType = "Content-Type"
     case contentLength = "Content-Length"
     case userAgent = "User-Agent"
