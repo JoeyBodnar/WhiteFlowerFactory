@@ -18,6 +18,7 @@ public enum NetworkError: Error {
     case unauthorized(Int)
     case notFound(Int)
     case forbidden(Int)
+    case parseError
 
     public var defaultMessage: String {
         switch self {
@@ -28,6 +29,7 @@ public enum NetworkError: Error {
         case .unauthorized: return "Unuthorized"
         case .notFound: return "Resource not found"
         case .forbidden: return "Forbidden"
+        case .parseError: return "Parsing failed"
         }
     }
 }

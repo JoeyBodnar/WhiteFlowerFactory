@@ -34,14 +34,15 @@ extension Result where Success == Data? {
     /// can safely call and will not be invoked if result is a failure
     /// returns self so we can chain actions
     @discardableResult
-    public func parse<T: Codable>(type: T.Type, completion: ([T]) -> Void) -> Result {
+    public func parse<T: Codable>(type: T.Type, completion: (Result<T, NetworkError>) -> Void) -> Result {
         if case .success(let data) = self {
             do {
                 let decoder = JSONDecoder()
-                let json = try decoder.decode([T].self, from: data ?? Data())
-                completion(json)
-            } catch {
-                // do not call completion if it fails
+                let json = try decoder.decode(T.self, from: data ?? Data())
+                completion(.success(json))
+            } catch let error {
+                print("parsing error: \(error)")
+                completion(.failure(NetworkError.parseError))
             }
         }
         
@@ -85,16 +86,6 @@ extension Result {
     public func onSuccess(_ successHandler: (Success) -> Void) -> Result<Success, Failure> {
         if case .success(let value) = self {
             successHandler(value)
-        }
-        
-        return self
-    }
-    
-    /// Will not be invoked if the result succeeded
-    @discardableResult
-    public func onError(_ errorHandler: (Failure) -> Void) -> Result<Success, Failure> {
-        if case .failure(let error) = self {
-            errorHandler(error)
         }
         
         return self
