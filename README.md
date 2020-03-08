@@ -92,12 +92,15 @@ To make requests serially (one after another, waiting until the previous request
 ### Codable support
 Suppose you have a model, Post, that conforms to Codable. If you want to get an array of posts from your api, just do the following:
 
-    WhiteFlower.shared.get(urlString: "www.myapi/posts") { (response) in
-        response.result.parse(type: Post.self, onSuccess: { (posts) in
-           // posts is an array of Post objects
-        }, onError: { (error) in
-          // handle error here
-        })
+    WhiteFlower.shared.get(urlString: "www.myapi.com/posts") { response in
+        response.result.parse(type: [Post].self) { result in
+            switch result {
+            case .success(let posts): // posts is an array of Post objects
+                print("posts are \(posts)")
+            case .failure(let error):
+                print("error is \(error)")
+            }
+        }
     }
 
 
