@@ -6,7 +6,7 @@
 //  Copyright © 2019 Stephen Bodnar. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for WhiteFlowerFactory.
 FOUNDATION_EXPORT double WhiteFlowerFactoryVersionNumber;
