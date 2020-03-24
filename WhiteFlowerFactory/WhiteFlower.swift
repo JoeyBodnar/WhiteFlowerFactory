@@ -48,22 +48,14 @@ extension WhiteFlower {
     }
     
     public func get(request: WhiteFlowerRequest, completion: @escaping(DataTaskCompletion)) {
-     self.request(request.method, withURL: request.urlString, withParams: request.params, andHeaders: request.headers, completion: completion)
+        self.request(request.method, withURL: request.urlString, withParams: request.params, andHeaders: request.headers, completion: completion)
      }
      
-     public func get<T: Provider>(endPoint: T, completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: endPoint.path, withParams: nil, andHeaders: nil, completion: completion)
-     }
-     
-     public func get(urlString: String, headers: [HTTPHeader], completion: @escaping(DataTaskCompletion)) {
-        request(.get, withURL: urlString, withParams: nil, andHeaders: headers, completion: completion)
-     }
-     
-     public func get<T: Provider>(endPoint: T, headers: [HTTPHeader], completion: @escaping(DataTaskCompletion)) {
+     public func get<T: Provider>(endPoint: T, headers: [HTTPHeader]? = nil, completion: @escaping(DataTaskCompletion)) {
         request(.get, withURL: endPoint.path, withParams: nil, andHeaders: headers, completion: completion)
      }
      
-     public func get(urlString: String, completion: @escaping(DataTaskCompletion)) {
+     public func get(urlString: String, headers: [HTTPHeader]? = nil, completion: @escaping(DataTaskCompletion)) {
         request(.get, withURL: urlString, withParams: nil, andHeaders: nil, completion: completion)
      }
      

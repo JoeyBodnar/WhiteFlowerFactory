@@ -18,9 +18,10 @@ public class WhiteFlowerRequest {
     public var headers: [HTTPHeader]?
     public var params: [String: Any]?
     
-    public init(method: HTTPMethod, urlString: String) {
+    public init(method: HTTPMethod, urlString: String, headers: [HTTPHeader]? = nil) {
         self.method = method
         self.urlString = urlString
+        self.headers = headers
     }
     
     public convenience init<T: Provider>(method: HTTPMethod, endPoint: T) {

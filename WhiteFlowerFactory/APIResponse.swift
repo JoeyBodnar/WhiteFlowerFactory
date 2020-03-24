@@ -28,7 +28,8 @@ public class APIResponse {
         let originalResponse = DataTaskResponse(data: data, response: response)
         
         switch statusCode {
-        case 200..<400: self.init(dataTaskResponse: originalResponse, result: .success(data ?? Data()), originalRequest: originalRequest)
+        case 200..<400:
+            self.init(dataTaskResponse: originalResponse, result: .success(data ?? Data()), originalRequest: originalRequest)
         case 400:
             let error: APIResult = .failure(.badRequest(statusCode))
             self.init(dataTaskResponse: originalResponse, result: error, originalRequest: originalRequest)
