@@ -3,10 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F0512C42429027300ED64FE /* WhiteFlower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7642307D9FB00515CA0 /* WhiteFlower.swift */; };
+		9F0512C52429027300ED64FE /* WhiteFlowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */; };
+		9F0512C62429027300ED64FE /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7752307DB6400515CA0 /* HTTPContentType.swift */; };
+		9F0512C72429027300ED64FE /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7732307DB6400515CA0 /* HTTPHeader.swift */; };
+		9F0512C82429027300ED64FE /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7722307DB6400515CA0 /* HTTPHeaderField.swift */; };
+		9F0512C92429027300ED64FE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7742307DB6400515CA0 /* HTTPMethod.swift */; };
+		9F0512CA2429027300ED64FE /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7622307D9FB00515CA0 /* APIResponse.swift */; };
+		9F0512CB2429027300ED64FE /* DataTaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */; };
+		9F0512CC2429027300ED64FE /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */; };
+		9F0512CD2429027300ED64FE /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77B2307DB6D00515CA0 /* AsynchronousOperation.swift */; };
+		9F0512CE2429027300ED64FE /* WhiteFlowerSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */; };
+		9F0512CF2429027300ED64FE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7632307D9FB00515CA0 /* NetworkError.swift */; };
+		9F0512D02429027300ED64FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
+		9F0512D12429027300ED64FE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
+		9F0512D42429080E00ED64FE /* WhiteFlowerFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (Required, ); }; };
 		9F53B7652307D9FB00515CA0 /* WhiteFlowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */; };
 		9F53B7662307D9FB00515CA0 /* DataTaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */; };
 		9F53B7672307D9FB00515CA0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7622307D9FB00515CA0 /* APIResponse.swift */; };
@@ -21,9 +36,6 @@
 		9F53B77F2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */; };
 		9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
 		9F53B7832307DB7400515CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
-		9F53B7852307E3A100515CA0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 9F53B7842307E3A100515CA0 /* LICENSE */; };
-		9FCFD8AD230869F200825828 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFD8AC230869F200825828 /* README.md */; };
-		9FF4345A2307015200B6C7AB /* WhiteFlowerFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */; };
 		9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */; };
 		9FF434612307015200B6C7AB /* WhiteFlowerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -75,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FF4345A2307015200B6C7AB /* WhiteFlowerFactory.framework in Frameworks */,
+				9F0512D42429080E00ED64FE /* WhiteFlowerFactory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,8 +238,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FCFD8AD230869F200825828 /* README.md in Resources */,
-				9F53B7852307E3A100515CA0 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +276,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F0512D12429027300ED64FE /* Protocols.swift in Sources */,
+				9F0512C52429027300ED64FE /* WhiteFlowerRequest.swift in Sources */,
+				9F0512C82429027300ED64FE /* HTTPHeaderField.swift in Sources */,
+				9F0512CC2429027300ED64FE /* NetworkOperation.swift in Sources */,
+				9F0512C92429027300ED64FE /* HTTPMethod.swift in Sources */,
+				9F0512CE2429027300ED64FE /* WhiteFlowerSerialQueue.swift in Sources */,
+				9F0512C62429027300ED64FE /* HTTPContentType.swift in Sources */,
+				9F0512C72429027300ED64FE /* HTTPHeader.swift in Sources */,
+				9F0512CA2429027300ED64FE /* APIResponse.swift in Sources */,
+				9F0512C42429027300ED64FE /* WhiteFlower.swift in Sources */,
 				9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */,
+				9F0512CF2429027300ED64FE /* NetworkError.swift in Sources */,
+				9F0512CB2429027300ED64FE /* DataTaskResponse.swift in Sources */,
+				9F0512CD2429027300ED64FE /* AsynchronousOperation.swift in Sources */,
+				9F0512D02429027300ED64FE /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +299,7 @@
 /* Begin PBXTargetDependency section */
 		9FF4345C2307015200B6C7AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = maccatalyst;
 			target = 9FF4344F2307015100B6C7AB /* WhiteFlowerFactory */;
 			targetProxy = 9FF4345B2307015200B6C7AB /* PBXContainerItemProxy */;
 		};
@@ -424,7 +449,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.WhiteFlowerFactory;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,7 +480,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.WhiteFlowerFactory;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
