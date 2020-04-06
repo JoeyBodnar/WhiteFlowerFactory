@@ -51,4 +51,34 @@ public class APIResponse {
             self.init(dataTaskResponse: originalResponse, result: .failure(.badRequest(statusCode)), originalRequest: originalRequest)
         }
     }
+    
+    func serializeTo<T: Decodable>(type: T.Type) -> Result<T, Error> {
+        let statusCode: Int = (self.dataTaskResponse?.response as? HTTPURLResponse)?.statusCode ?? 500
+        
+        switch result {
+        case .success(let data):
+            if statusCode >= 200 && statusCode <= 204 {
+                if let unwrappedData = data {
+                    do {
+                        let decoder = JSONDecoder()
+                        let typedObject: T = try decoder.decode(T.self, from: unwrappedData)
+                        return .success(typedObject)
+                    } catch let error {
+                        return Result.failure(error)
+                    }
+                }
+            } else {
+                return .failure(NetworkError.parseError)
+            }
+        case .failure(let error):
+            return .failure(error)
+        }
+        
+        return .failure(NetworkError.badRequest(statusCode))
+    }
+    
+    func isOk() -> Bool {
+        let statusCode: Int = (self.dataTaskResponse?.response as? HTTPURLResponse)?.statusCode ?? 500
+        return statusCode <= 204
+    }
 }
