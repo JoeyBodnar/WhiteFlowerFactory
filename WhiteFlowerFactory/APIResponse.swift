@@ -52,7 +52,7 @@ public class APIResponse {
         }
     }
     
-    func serializeTo<T: Decodable>(type: T.Type) -> Result<T, Error> {
+    public func serializeTo<T: Decodable>(type: T.Type) -> Result<T, Error> {
         let statusCode: Int = (self.dataTaskResponse?.response as? HTTPURLResponse)?.statusCode ?? 500
         
         switch result {
@@ -77,7 +77,7 @@ public class APIResponse {
         return .failure(NetworkError.badRequest(statusCode))
     }
     
-    func isOk() -> Bool {
+    public func isOk() -> Bool {
         let statusCode: Int = (self.dataTaskResponse?.response as? HTTPURLResponse)?.statusCode ?? 500
         return statusCode <= 204
     }
