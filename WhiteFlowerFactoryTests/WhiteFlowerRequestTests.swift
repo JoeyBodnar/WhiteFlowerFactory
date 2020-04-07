@@ -10,15 +10,6 @@ import XCTest
 
 class WhiteFlowerRequestTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func testWhiteFlowerRequestPassesCorrectUrlString() {
         let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, urlString: "https://www.httpbin.org")
         
