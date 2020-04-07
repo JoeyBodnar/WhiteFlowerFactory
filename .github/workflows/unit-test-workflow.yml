@@ -17,3 +17,4 @@ jobs:
         run: |
           pwd
           xcodebuild clean test -project WhiteFlowerFactory.xcodeproj -scheme WhiteFlowerFactory -destination 'platform=iOS Simulator,name=iPhone 11 Pro'
+          
