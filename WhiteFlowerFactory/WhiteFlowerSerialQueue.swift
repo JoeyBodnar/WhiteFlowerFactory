@@ -20,7 +20,7 @@ public class WhiteFlowerSerialQueue {
     }
     
     /// Do not directly call this outside of this class.
-    fileprivate func addOperations(operations: [Operation]) {
+    private func addOperations(operations: [Operation]) {
         for operation in operations {
             operationQueue.addOperation(operation)
         }

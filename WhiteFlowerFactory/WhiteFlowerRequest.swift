@@ -28,19 +28,9 @@ public class WhiteFlowerRequest {
         self.init(method: method, urlString: endPoint.path)
     }
     
-    public convenience init<T: Provider>(method: HTTPMethod, endPoint: T, params: [String: Any]?) {
+    public convenience init<T: Provider>(method: HTTPMethod, endPoint: T, params: [String: Any]? = nil, headers: [HTTPHeader]? = nil) {
         self.init(method: method, urlString: endPoint.path)
         self.params = params
-    }
-    
-    public convenience init<T: Provider>(method: HTTPMethod, endPoint: T, params: [String: Any]?, headers: [HTTPHeader]?) {
-        self.init(method: method, urlString: endPoint.path)
-        self.params = params
-        self.headers = headers
-    }
-    
-    public convenience init<T: Provider>(method: HTTPMethod, endPoint: T, headers: [HTTPHeader]?) {
-        self.init(method: method, urlString: endPoint.path)
         self.headers = headers
     }
     
@@ -57,14 +47,10 @@ public class WhiteFlowerRequest {
                     if unwrappedHeaders.containsUrlEncoded {
                         request.httpBody = postBody.urlEncoded()
                     } else {
-                        do {
-                            request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        } catch { return nil }
+                        request.httpBody = try? createJSON(postBody: postBody)
                     }
                 } else {
-                    do {
-                        request.httpBody = try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
-                    } catch { return nil }
+                    request.httpBody = try? createJSON(postBody: postBody)
                 }
                 
             } else { print("params were nil") }
@@ -77,6 +63,14 @@ public class WhiteFlowerRequest {
             
             return request
         } else {
+            return nil
+        }
+    }
+    
+    private func createJSON(postBody: [String: Any]) throws -> Data? {
+        do {
+            return try JSONSerialization.data(withJSONObject: postBody, options: JSONSerialization.WritingOptions.prettyPrinted)
+        } catch {
             return nil
         }
     }
