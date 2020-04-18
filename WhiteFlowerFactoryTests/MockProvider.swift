@@ -11,17 +11,17 @@ import Foundation
 enum MockProvider: Provider {
     
     case url
+    case get
     
     var path: String {
         switch self {
-        case .url: return "https://www.httpbin.org"
+        case .url: return "https://httpbin.org"
+        case .get: return "https://httpbin.org/get"
         }
     }
     
     var baseURL: String {
-        switch self {
-        case .url: return "https://www.httpbin.org"
-        }
+        return "https://www.httpbin.org"
     }
     
     static var name: String {

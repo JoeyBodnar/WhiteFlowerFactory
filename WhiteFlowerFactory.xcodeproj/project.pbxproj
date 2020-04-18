@@ -38,6 +38,7 @@
 		9F53B7832307DB7400515CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
 		9FC57D7D243CB0C700EE42FF /* WhiteFlowerRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */; };
 		9FC57D7F243CB16E00EE42FF /* MockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D7E243CB16E00EE42FF /* MockProvider.swift */; };
+		9FC57D82243CD4FA00EE42FF /* HTTPBinGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */; };
 		9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */; };
 		9FF434612307015200B6C7AB /* WhiteFlowerFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		9F53B7842307E3A100515CA0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerRequestTests.swift; sourceTree = "<group>"; };
 		9FC57D7E243CB16E00EE42FF /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
+		9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBinGetResponse.swift; sourceTree = "<group>"; };
 		9FCFD8AC230869F200825828 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WhiteFlowerFactory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhiteFlowerFactory.h; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */,
 				9FF434602307015200B6C7AB /* Info.plist */,
 				9FC57D7E243CB16E00EE42FF /* MockProvider.swift */,
+				9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */,
 			);
 			path = WhiteFlowerFactoryTests;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				9F0512C62429027300ED64FE /* HTTPContentType.swift in Sources */,
 				9F0512C72429027300ED64FE /* HTTPHeader.swift in Sources */,
 				9F0512CA2429027300ED64FE /* APIResponse.swift in Sources */,
+				9FC57D82243CD4FA00EE42FF /* HTTPBinGetResponse.swift in Sources */,
 				9F0512C42429027300ED64FE /* WhiteFlower.swift in Sources */,
 				9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */,
 				9F0512CF2429027300ED64FE /* NetworkError.swift in Sources */,
@@ -462,7 +466,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -494,7 +498,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphoneos";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -505,6 +509,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U352XG8SZU;
 				INFOPLIST_FILE = WhiteFlowerFactoryTests/Info.plist;
@@ -515,6 +521,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.WhiteFlowerFactoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -524,6 +532,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U352XG8SZU;
 				INFOPLIST_FILE = WhiteFlowerFactoryTests/Info.plist;
@@ -534,6 +544,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = stephenbodnar.WhiteFlowerFactoryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

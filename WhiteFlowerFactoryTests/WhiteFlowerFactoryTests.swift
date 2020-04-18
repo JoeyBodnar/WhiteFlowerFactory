@@ -10,25 +10,75 @@ import XCTest
 
 class WhiteFlowerFactoryTests: XCTestCase {
 
+    var expectation: XCTestExpectation!
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        expectation = self.expectation(description: "load data")
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        expectation = nil
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testGetRequestStatusCode() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, endPoint: MockProvider.get)
+        var statusCode: Int = 0
+        WhiteFlower.shared.request(request: request) { response in
+            statusCode = (response.dataTaskResponse!.response! as! HTTPURLResponse).statusCode
+            self.expectation.fulfill()
         }
+        
+        waitForExpectations(timeout: 10.0, handler: nil)
+        XCTAssertTrue(statusCode == 200)
+    }
+    
+    func testGetDataReqest() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, endPoint: MockProvider.get)
+        var expectedData: Data!
+        WhiteFlower.shared.request(request: request) { response in
+            switch response.result {
+            case .success(let data): expectedData = data
+            case .failure: break
+            }
+            self.expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: nil)
+        XCTAssertTrue(expectedData.count > 0)
+    }
+    
+    func testSerializeGetResponse() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, endPoint: MockProvider.get)
+        var expectedData: HTTPBinGetResponse! = nil
+        WhiteFlower.shared.request(request: request) { response in
+            let result = response.serializeTo(type: HTTPBinGetResponse.self)
+            switch result {
+            case .success(let response): expectedData = response
+            case .failure: break
+            }
+            self.expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0, handler: nil)
+        XCTAssertTrue(expectedData != nil)
+        XCTAssertTrue(expectedData.url == "https://httpbin.org/get")
+    }
+    
+    func testGetPlainUrlString() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, urlString: "https://httpbin.org/get")
+        var expectedData: HTTPBinGetResponse! = nil
+        WhiteFlower.shared.request(request: request) { response in
+            let result = response.serializeTo(type: HTTPBinGetResponse.self)
+            switch result {
+            case .success(let response): expectedData = response
+            case .failure: break
+            }
+            self.expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 45.0, handler: nil)
+        XCTAssertTrue(expectedData != nil)
+        XCTAssertTrue(expectedData.url == "https://httpbin.org/get")
     }
 
 }
