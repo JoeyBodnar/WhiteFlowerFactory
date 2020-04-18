@@ -148,9 +148,9 @@
 			children = (
 				9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */,
 				9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */,
+				9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */,
 				9FF434602307015200B6C7AB /* Info.plist */,
 				9FC57D7E243CB16E00EE42FF /* MockProvider.swift */,
-				9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */,
 			);
 			path = WhiteFlowerFactoryTests;
 			sourceTree = "<group>";
