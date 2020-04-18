@@ -77,8 +77,10 @@ public class APIResponse {
         return .failure(NetworkError.badRequest(statusCode))
     }
     
-    public func isOk() -> Bool {
-        let statusCode: Int = (self.dataTaskResponse?.response as? HTTPURLResponse)?.statusCode ?? 500
-        return statusCode <= 204
+    public func isOk() -> Result<Bool, Error> {
+        switch result {
+        case .success: return Result.success(true)
+        case .failure(let error): return Result.failure(error)
+        }
     }
 }
