@@ -18,7 +18,9 @@ public class WhiteFlower {
     /// requests executed by a WhiteFlowerSerialQueue
     private func request(_ method: HTTPMethod, withURL urlString: String, withParams params: [String: Any]?, andHeaders headers: [HTTPHeader]?, completion: @escaping(DataTaskCompletion)) {
         guard let _ = URL(string: urlString) else {
-            completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
+            DispatchQueue.main.async {
+                completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
+            }
             
             return
         }
@@ -32,7 +34,9 @@ public class WhiteFlower {
         }
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            completion(APIResponse(data: data, response: response, error: error, originalRequest: request))
+            DispatchQueue.main.async {
+                completion(APIResponse(data: data, response: response, error: error, originalRequest: request))
+            }
         }
         
         task.resume()
