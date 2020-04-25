@@ -10,7 +10,7 @@ import Foundation
 
 public typealias DataTaskCompletion = (APIResponse) -> Void
 
-public class WhiteFlower {
+public final class WhiteFlower {
     
     public static let shared = WhiteFlower()
     

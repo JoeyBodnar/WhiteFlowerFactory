@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 class NetworkOperation : AsynchronousOperation {
     var task: URLSessionTask?
@@ -22,7 +23,7 @@ class NetworkOperation : AsynchronousOperation {
         
         task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             defer { self.finish() }
-            print("finished")
+            os_log("finished")
             let apiResponse = APIResponse(data: data, response: response, error: error, originalRequest: urlRequest)
             completion(apiResponse)
         })
@@ -35,6 +36,6 @@ class NetworkOperation : AsynchronousOperation {
     
     override func main() {
         task?.resume()
-        print("starting")
+        os_log("starting")
     }
 }

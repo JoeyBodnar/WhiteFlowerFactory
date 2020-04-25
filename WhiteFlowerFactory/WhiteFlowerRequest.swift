@@ -7,10 +7,11 @@
 //
 
 import Foundation
+import os
 
 /// Just a simple abstraction on top of URLRequest.
 /// To make a request with WhiteFlower, you must first create a white flower request. All network requests are routed through this class. 
-public class WhiteFlowerRequest {
+public final class WhiteFlowerRequest {
     public var urlString: String
     public var method: HTTPMethod
     
@@ -53,7 +54,7 @@ public class WhiteFlowerRequest {
                     request.httpBody = try? createJSON(postBody: postBody)
                 }
                 
-            } else { print("params were nil") }
+            } else { os_log("params were nil") }
             
             if let unwrappedHeaders = headers {
                 for header in unwrappedHeaders {

@@ -36,6 +36,9 @@
 		9F53B77F2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */; };
 		9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
 		9F53B7832307DB7400515CA0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
+		9FC13D5A245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */; };
+		9FC13D5B245479C2004FCA0F /* WhiteFlowerConcurrentQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */; };
+		9FC13D5D24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC13D5C24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift */; };
 		9FC57D7D243CB0C700EE42FF /* WhiteFlowerRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */; };
 		9FC57D7F243CB16E00EE42FF /* MockProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D7E243CB16E00EE42FF /* MockProvider.swift */; };
 		9FC57D82243CD4FA00EE42FF /* HTTPBinGetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */; };
@@ -69,6 +72,8 @@
 		9F53B7802307DB7400515CA0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9F53B7812307DB7400515CA0 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		9F53B7842307E3A100515CA0 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerConcurrentQueue.swift; sourceTree = "<group>"; };
+		9FC13D5C24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerConcurrentQueueTests.swift; sourceTree = "<group>"; };
 		9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerRequestTests.swift; sourceTree = "<group>"; };
 		9FC57D7E243CB16E00EE42FF /* MockProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockProvider.swift; sourceTree = "<group>"; };
 		9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBinGetResponse.swift; sourceTree = "<group>"; };
@@ -139,6 +144,7 @@
 				9F53B7812307DB7400515CA0 /* Protocols.swift */,
 				9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */,
 				9FF434542307015100B6C7AB /* Info.plist */,
+				9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */,
 			);
 			path = WhiteFlowerFactory;
 			sourceTree = "<group>";
@@ -148,9 +154,10 @@
 			children = (
 				9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */,
 				9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */,
+				9FC13D5C24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift */,
 				9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */,
-				9FF434602307015200B6C7AB /* Info.plist */,
 				9FC57D7E243CB16E00EE42FF /* MockProvider.swift */,
+				9FF434602307015200B6C7AB /* Info.plist */,
 			);
 			path = WhiteFlowerFactoryTests;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				9F53B7662307D9FB00515CA0 /* DataTaskResponse.swift in Sources */,
 				9F53B77D2307DB6D00515CA0 /* AsynchronousOperation.swift in Sources */,
 				9F53B7822307DB7400515CA0 /* Protocols.swift in Sources */,
+				9FC13D5A245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift in Sources */,
 				9F53B7692307D9FB00515CA0 /* WhiteFlower.swift in Sources */,
 				9F53B7792307DB6400515CA0 /* HTTPHeaderField.swift in Sources */,
 				9F53B7672307D9FB00515CA0 /* APIResponse.swift in Sources */,
@@ -292,6 +300,7 @@
 				9F0512CC2429027300ED64FE /* NetworkOperation.swift in Sources */,
 				9FC57D7D243CB0C700EE42FF /* WhiteFlowerRequestTests.swift in Sources */,
 				9F0512C92429027300ED64FE /* HTTPMethod.swift in Sources */,
+				9FC13D5B245479C2004FCA0F /* WhiteFlowerConcurrentQueue.swift in Sources */,
 				9F0512CE2429027300ED64FE /* WhiteFlowerSerialQueue.swift in Sources */,
 				9F0512C62429027300ED64FE /* HTTPContentType.swift in Sources */,
 				9F0512C72429027300ED64FE /* HTTPHeader.swift in Sources */,
@@ -303,6 +312,7 @@
 				9F0512CB2429027300ED64FE /* DataTaskResponse.swift in Sources */,
 				9F0512CD2429027300ED64FE /* AsynchronousOperation.swift in Sources */,
 				9F0512D02429027300ED64FE /* Extensions.swift in Sources */,
+				9FC13D5D24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

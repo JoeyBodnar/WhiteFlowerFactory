@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import os
 
 // Codable
 extension Result where Success == Data? {
@@ -41,7 +42,7 @@ extension Result where Success == Data? {
                 let json = try decoder.decode(T.self, from: data ?? Data())
                 completion(.success(json))
             } catch let error {
-                print("parsing error: \(error)")
+                os_log("parsing error: %@", error.localizedDescription)
                 completion(.failure(NetworkError.parseError))
             }
         }
