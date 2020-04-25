@@ -15,14 +15,10 @@ public final class WhiteFlowerConfiguration {
     /// the queue where to receive callbacks
     internal let dispatchQueue: DispatchQueue
     
-    /// default headers sent with every request
-    internal var defaultHeaders: [HTTPHeader]
-    
     internal let session: URLSession
     
-    public init(dispatchQueue: DispatchQueue = .main, defaultHeaders: [HTTPHeader] = [], session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+    public init(dispatchQueue: DispatchQueue = .main, session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.dispatchQueue = dispatchQueue
-        self.defaultHeaders = defaultHeaders
         self.session = session
     }
 }

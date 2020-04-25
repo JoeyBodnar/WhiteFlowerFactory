@@ -95,8 +95,18 @@ extension Result {
 
 extension Array where Element == HTTPHeader {
     
-    var containsUrlEncoded: Bool {
+    internal var containsUrlEncoded: Bool {
         return self.contains { $0.value == HTTPContentType.urlEncoded.rawValue }
+    }
+    
+    /// array of HTTPHeader objects ina  single dictionary
+    internal var allAsDictionary: [String: String] {
+        var dictionary: [String: String] = [:]
+        for header in self {
+            dictionary[header.field] = header.value
+        }
+        
+        return dictionary
     }
 }
 

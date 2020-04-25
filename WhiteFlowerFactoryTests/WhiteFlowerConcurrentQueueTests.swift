@@ -6,7 +6,6 @@
 //  Copyright © 2020 Stephen Bodnar. All rights reserved.
 //
 
-
 import XCTest
 
 class WhiteFlowerConcurrentQueueTests: XCTestCase {
