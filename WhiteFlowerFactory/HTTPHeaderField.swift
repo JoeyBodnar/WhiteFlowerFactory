@@ -9,10 +9,10 @@
 import Foundation
 
 public struct HTTPHeaderField {
-    static let authorization: String = "Authorization"
-    static let contentType: String = "Content-Type"
-    static let contentLength: String = "Content-Length"
-    static let userAgent: String = "User-Agent"
-    static let accept: String = "Accept"
-    static let cacheControl: String = "Cache-Control"
+    public static let authorization: String = "Authorization"
+    public static let contentType: String = "Content-Type"
+    public static let contentLength: String = "Content-Length"
+    public static let userAgent: String = "User-Agent"
+    public static let accept: String = "Accept"
+    public static let cacheControl: String = "Cache-Control"
 }
