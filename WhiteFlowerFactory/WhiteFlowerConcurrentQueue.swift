@@ -33,14 +33,12 @@ public final class WhiteFlowerConcurrentQueue {
     public func execute(completion: @escaping (_ responses: [APIResponse]) -> Void) {
         let group: DispatchGroup = DispatchGroup()
         
-        var ii = 0
-        for i in requests {
+        for request in requests {
             group.enter()
-            WhiteFlower.shared.request(request: i) { response in
+            WhiteFlower.shared.request(request: request) { response in
                 self.responses.append(response)
                 group.leave()
             }
-            ii = ii + 1
         }
         
         group.notify(queue: queue) {

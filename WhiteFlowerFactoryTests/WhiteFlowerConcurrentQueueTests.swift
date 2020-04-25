@@ -31,7 +31,6 @@ class WhiteFlowerConcurrentQueueTests: XCTestCase {
         XCTAssertTrue(resetResponses[1].originalRequest!.url!.absoluteString == "https://www.apple.com")
         XCTAssertTrue(resetResponses[2].originalRequest!.url!.absoluteString == "https://www.yahoo.com")
         XCTAssertTrue(resetResponses[3].originalRequest!.url!.absoluteString == "https://www.reddit.com")
-        
     }
 
 }
