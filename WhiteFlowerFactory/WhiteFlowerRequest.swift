@@ -41,7 +41,7 @@ public final class WhiteFlowerRequest {
             var request = URLRequest(url: url)
             request.httpMethod = method.rawValue
             if method == .post || method == .put || method == .patch || method == .delete {
-                request.setValue(HTTPContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+                request.setValue(HTTPContentType.json.rawValue, forHTTPHeaderField: HTTPHeaderField.contentType)
             }
             if let postBody = params {
                 if let unwrappedHeaders = headers {

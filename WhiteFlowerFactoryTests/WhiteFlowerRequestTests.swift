@@ -39,8 +39,8 @@ class WhiteFlowerRequestTests: XCTestCase {
     }
     
     func testWhiteFlowerRequestPassesHTTPHeaders() {
-        let authHeader: HTTPHeader = HTTPHeader(field: HTTPHeaderField.authorization.rawValue, value: "Authorization 123")
-        let agentHeader: HTTPHeader = HTTPHeader(field: HTTPHeaderField.userAgent.rawValue, value: "macbook")
+        let authHeader: HTTPHeader = HTTPHeader(field: HTTPHeaderField.authorization, value: "Authorization 123")
+        let agentHeader: HTTPHeader = HTTPHeader(field: HTTPHeaderField.userAgent, value: "macbook")
         let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .post, endPoint: MockProvider.url, headers: [authHeader, agentHeader])
         
         let headerFields: [String: String] = request.urlRequest!.allHTTPHeaderFields!
@@ -78,7 +78,7 @@ class WhiteFlowerRequestTests: XCTestCase {
         let contentTypes: [HTTPContentType] = [.gif, .jpeg, .json, .png, .urlEncoded, .xml, .textPlain, .mp4]
         
         for type in contentTypes {
-            let postRequest: WhiteFlowerRequest = WhiteFlowerRequest(method: .post, endPoint: MockProvider.url, headers: [HTTPHeader(field: HTTPHeaderField.contentType.rawValue, value: type.rawValue)])
+            let postRequest: WhiteFlowerRequest = WhiteFlowerRequest(method: .post, endPoint: MockProvider.url, headers: [HTTPHeader(field: HTTPHeaderField.contentType, value: type.rawValue)])
             
             let contentType: String = postRequest.urlRequest!.allHTTPHeaderFields!["Content-Type"]!
             switch type {
