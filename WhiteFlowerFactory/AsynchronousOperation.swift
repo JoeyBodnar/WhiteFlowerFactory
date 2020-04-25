@@ -10,7 +10,7 @@ import Foundation
 
 // Thanks to Rob from this stackoverflow question: https://stackoverflow.com/questions/43561169/trying-to-understand-asynchronous-operation-subclass
 // The code from AsynchronousOperation and NetworkOperation is from his answer
-class AsynchronousOperation: Operation {
+internal class AsynchronousOperation: Operation {
     
     @objc enum OperationState: Int {
         case ready

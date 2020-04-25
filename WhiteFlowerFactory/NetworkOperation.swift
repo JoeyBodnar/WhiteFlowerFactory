@@ -9,7 +9,7 @@
 import Foundation
 import os
 
-class NetworkOperation : AsynchronousOperation {
+internal final class NetworkOperation : AsynchronousOperation {
     var task: URLSessionTask?
     
     init(request: WhiteFlowerRequest, completion: @escaping(DataTaskCompletion)) {

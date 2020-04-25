@@ -11,7 +11,7 @@ import Foundation
 /// When we pass back the result to the user in the completion handler, sometimes
 /// the user might want access to the original data and response that resulted from the session.datatask(with: ..) call
 /// so we wrap that info in this object and pass this back as part of the APIResponse completion
-public class DataTaskResponse {
+public final class DataTaskResponse {
     public var data: Data?
     public var response: URLResponse?
     
