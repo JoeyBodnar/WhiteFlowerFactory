@@ -14,20 +14,18 @@ public final class WhiteFlower {
     
     public static let shared = WhiteFlower()
     
-    private let session: URLSession
+    private let configuration: WhiteFlowerConfiguration
     
-    public init(session: URLSession = URLSession.shared) {
-        self.session = session
+    public init(configuration: WhiteFlowerConfiguration = WhiteFlowerConfiguration.default) {
+        self.configuration = configuration
     }
     
     /// All individual requests are routed through here. the only requests that are not routed through this function are the
     /// requests executed by a WhiteFlowerSerialQueue
     private func request(_ method: HTTPMethod, withURL urlString: String, withParams params: [String: Any]?, andHeaders headers: [HTTPHeader]?, completion: @escaping(DataTaskCompletion)) {
         guard let _ = URL(string: urlString) else {
-            DispatchQueue.main.async {
-                completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
-            }
-            
+            completion(APIResponse(dataTaskResponse: nil, result: .failure(.invalidURL(400)), originalRequest: nil))
+
             return
         }
         
@@ -39,8 +37,8 @@ public final class WhiteFlower {
             return
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
+        let task = configuration.session.dataTask(with: request) { [weak self] (data, response, error) in
+            self?.configuration.dispatchQueue.async {
                 completion(APIResponse(data: data, response: response, error: error, originalRequest: request))
             }
         }

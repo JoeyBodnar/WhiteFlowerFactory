@@ -13,10 +13,11 @@ public final class WhiteFlowerConcurrentQueue {
     private let requests: [WhiteFlowerRequest]
     private let queue: DispatchQueue
     
-    private var responses: [APIResponse] = []
-    
     /// if `true`, then the order of the array of the responses will be in the same order as the original requests
     public var maintainOrder: Bool = true
+    
+    /// array of responses to send back
+    private var responses: [APIResponse] = []
     
     /// the original URLRequest objects for the `requests`. Will filter out nil items.
     private var originalURLRequests: [URLRequest] {
