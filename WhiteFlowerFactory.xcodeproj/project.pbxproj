@@ -22,9 +22,6 @@
 		9F0512D02429027300ED64FE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7802307DB7400515CA0 /* Extensions.swift */; };
 		9F0512D12429027300ED64FE /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7812307DB7400515CA0 /* Protocols.swift */; };
 		9F0512D42429080E00ED64FE /* WhiteFlowerFactory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FF434502307015100B6C7AB /* WhiteFlowerFactory.framework */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (Required, ); }; };
-		9F47C1A22454A76000970CFB /* WhiteFlowerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C1A12454A76000970CFB /* WhiteFlowerConfiguration.swift */; };
-		9F47C1A42454AEFF00970CFB /* WhiteFlowerConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C1A32454AEFF00970CFB /* WhiteFlowerConfigurationTests.swift */; };
-		9F47C1A52454AF4200970CFB /* WhiteFlowerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47C1A12454A76000970CFB /* WhiteFlowerConfiguration.swift */; };
 		9F53B7652307D9FB00515CA0 /* WhiteFlowerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */; };
 		9F53B7662307D9FB00515CA0 /* DataTaskResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */; };
 		9F53B7672307D9FB00515CA0 /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F53B7622307D9FB00515CA0 /* APIResponse.swift */; };
@@ -60,8 +57,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F47C1A12454A76000970CFB /* WhiteFlowerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerConfiguration.swift; sourceTree = "<group>"; };
-		9F47C1A32454AEFF00970CFB /* WhiteFlowerConfigurationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteFlowerConfigurationTests.swift; sourceTree = "<group>"; };
 		9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteFlowerRequest.swift; sourceTree = "<group>"; };
 		9F53B7612307D9FB00515CA0 /* DataTaskResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTaskResponse.swift; sourceTree = "<group>"; };
 		9F53B7622307D9FB00515CA0 /* APIResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
@@ -134,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				9F53B7642307D9FB00515CA0 /* WhiteFlower.swift */,
-				9F47C1A12454A76000970CFB /* WhiteFlowerConfiguration.swift */,
 				9F53B7602307D9FA00515CA0 /* WhiteFlowerRequest.swift */,
 				9F53B7752307DB6400515CA0 /* HTTPContentType.swift */,
 				9F53B7732307DB6400515CA0 /* HTTPHeader.swift */,
@@ -145,12 +139,12 @@
 				9F53B77A2307DB6D00515CA0 /* NetworkOperation.swift */,
 				9F53B77B2307DB6D00515CA0 /* AsynchronousOperation.swift */,
 				9F53B77E2307DB7000515CA0 /* WhiteFlowerSerialQueue.swift */,
+				9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */,
 				9F53B7632307D9FB00515CA0 /* NetworkError.swift */,
 				9F53B7802307DB7400515CA0 /* Extensions.swift */,
 				9F53B7812307DB7400515CA0 /* Protocols.swift */,
 				9FF434532307015100B6C7AB /* WhiteFlowerFactory.h */,
 				9FF434542307015100B6C7AB /* Info.plist */,
-				9FC13D59245474F2004FCA0F /* WhiteFlowerConcurrentQueue.swift */,
 			);
 			path = WhiteFlowerFactory;
 			sourceTree = "<group>";
@@ -161,7 +155,6 @@
 				9FC57D7C243CB0C700EE42FF /* WhiteFlowerRequestTests.swift */,
 				9FF4345E2307015200B6C7AB /* WhiteFlowerFactoryTests.swift */,
 				9FC13D5C24548735004FCA0F /* WhiteFlowerConcurrentQueueTests.swift */,
-				9F47C1A32454AEFF00970CFB /* WhiteFlowerConfigurationTests.swift */,
 				9FC57D81243CD4FA00EE42FF /* HTTPBinGetResponse.swift */,
 				9FC57D7E243CB16E00EE42FF /* MockProvider.swift */,
 				9FF434602307015200B6C7AB /* Info.plist */,
@@ -279,7 +272,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F53B7652307D9FB00515CA0 /* WhiteFlowerRequest.swift in Sources */,
-				9F47C1A22454A76000970CFB /* WhiteFlowerConfiguration.swift in Sources */,
 				9F53B7762307DB6400515CA0 /* HTTPContentType.swift in Sources */,
 				9F53B77C2307DB6D00515CA0 /* NetworkOperation.swift in Sources */,
 				9F53B7772307DB6400515CA0 /* HTTPMethod.swift in Sources */,
@@ -302,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0512D12429027300ED64FE /* Protocols.swift in Sources */,
-				9F47C1A42454AEFF00970CFB /* WhiteFlowerConfigurationTests.swift in Sources */,
 				9F0512C52429027300ED64FE /* WhiteFlowerRequest.swift in Sources */,
 				9FC57D7F243CB16E00EE42FF /* MockProvider.swift in Sources */,
 				9F0512C82429027300ED64FE /* HTTPHeaderField.swift in Sources */,
@@ -318,7 +309,6 @@
 				9F0512C42429027300ED64FE /* WhiteFlower.swift in Sources */,
 				9FF4345F2307015200B6C7AB /* WhiteFlowerFactoryTests.swift in Sources */,
 				9F0512CF2429027300ED64FE /* NetworkError.swift in Sources */,
-				9F47C1A52454AF4200970CFB /* WhiteFlowerConfiguration.swift in Sources */,
 				9F0512CB2429027300ED64FE /* DataTaskResponse.swift in Sources */,
 				9F0512CD2429027300ED64FE /* AsynchronousOperation.swift in Sources */,
 				9F0512D02429027300ED64FE /* Extensions.swift in Sources */,

@@ -14,10 +14,10 @@ public final class WhiteFlower {
     
     public static let shared = WhiteFlower()
     
-    private let configuration: WhiteFlowerConfiguration
+    internal let session: URLSession
     
-    public init(configuration: WhiteFlowerConfiguration = WhiteFlowerConfiguration.default) {
-        self.configuration = configuration
+    public init(session: URLSession = URLSession.shared) {
+        self.session = session
     }
     
     /// All individual requests are routed through here. the only requests that are not routed through this function are the
@@ -37,8 +37,8 @@ public final class WhiteFlower {
             return
         }
         
-        let task = configuration.session.dataTask(with: request) { [weak self] (data, response, error) in
-            self?.configuration.dispatchQueue.async {
+        let task = session.dataTask(with: request) { (data, response, error) in
+            DispatchQueue.main.async {
                 completion(APIResponse(data: data, response: response, error: error, originalRequest: request))
             }
         }
