@@ -11,7 +11,7 @@ import Foundation
 public typealias APIResult = Result<Data?, NetworkError>
 
 /// The response to all API calls
-public class APIResponse {
+public final class APIResponse {
     public var originalRequest: URLRequest? // Requests aborted by invalidURL will not have an originalRequest
     public var dataTaskResponse: DataTaskResponse?
     public var result: APIResult

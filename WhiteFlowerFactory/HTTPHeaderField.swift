@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum HTTPHeaderField: String {
-    case authorization = "Authorization"
-    case contentType = "Content-Type"
-    case contentLength = "Content-Length"
-    case userAgent = "User-Agent"
-    case accept = "Accept"
-    case cacheControl = "Cache-Control"
+public struct HTTPHeaderField {
+    public static let authorization: String = "Authorization"
+    public static let contentType: String = "Content-Type"
+    public static let contentLength: String = "Content-Length"
+    public static let userAgent: String = "User-Agent"
+    public static let accept: String = "Accept"
+    public static let cacheControl: String = "Cache-Control"
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class HTTPHeader {
+public final class HTTPHeader {
     let field: String
     let value: String
     

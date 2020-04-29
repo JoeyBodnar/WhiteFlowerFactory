@@ -80,5 +80,4 @@ class WhiteFlowerFactoryTests: XCTestCase {
         XCTAssertTrue(expectedData != nil)
         XCTAssertTrue(expectedData.url == "https://httpbin.org/get")
     }
-
 }
