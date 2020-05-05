@@ -3,6 +3,12 @@ WhiteFlowerFactory is a simple URLSession wrapper with support for both concurre
 ### Installation with Cocoapods
 
     pod 'WhiteFlowerFactory'
+    
+### Installation with Carthage (preferred)
+
+Add the following to your cartfile:
+
+    github "JoeyBodnar/WhiteFlowerFactory" == 0.4.0
 
 ### Usage
 Right now all callbacks are completed on the main queue, though this is subject to change in the near future.
