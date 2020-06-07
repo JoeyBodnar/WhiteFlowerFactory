@@ -80,4 +80,48 @@ class WhiteFlowerFactoryTests: XCTestCase {
         XCTAssertTrue(expectedData != nil)
         XCTAssertTrue(expectedData.url == "https://httpbin.org/get")
     }
+    
+    func testPostRequestJSONEncoding() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .post, endPoint: MockProvider.post, params: ["parameter": "value"], headers: nil)
+        var expectedData: Data! = nil
+        var expectedStatusCode: Int = 500
+        WhiteFlower.shared.request(request: request) { response in
+            switch response.result {
+            case .success(let data):
+                expectedData = data
+                expectedStatusCode = (response.dataTaskResponse!.response! as! HTTPURLResponse).statusCode
+                print(try! JSONSerialization.jsonObject(with: data!, options: .mutableLeaves))
+            case.failure(let error):
+                print(error)
+            }
+            
+            self.expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 45.0, handler: nil)
+        XCTAssertTrue(expectedData != nil)
+        XCTAssertTrue(expectedStatusCode == 200)
+    }
+    
+    func testPostReqestURLEncoding() {
+        let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .post, endPoint: MockProvider.post, params: ["parameter": "value"], headers: [HTTPHeader(field: HTTPHeaderField.contentType, value: HTTPContentType.urlEncoded.rawValue)])
+        var expectedData: Data! = nil
+        var expectedStatusCode: Int = 500
+        WhiteFlower.shared.request(request: request) { response in
+            switch response.result {
+            case .success(let data):
+                expectedData = data
+                expectedStatusCode = (response.dataTaskResponse!.response! as! HTTPURLResponse).statusCode
+                print(try! JSONSerialization.jsonObject(with: data!, options: .mutableLeaves))
+            case.failure(let error):
+                print(error)
+            }
+            
+            self.expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 45.0, handler: nil)
+        XCTAssertTrue(expectedData != nil)
+        XCTAssertTrue(expectedStatusCode == 200)
+    }
 }

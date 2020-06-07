@@ -12,11 +12,13 @@ enum MockProvider: Provider {
     
     case url
     case get
+    case post
     
     var path: String {
         switch self {
-        case .url: return "https://httpbin.org"
-        case .get: return "https://httpbin.org/get"
+        case .url: return "\(baseURL)"
+        case .get: return "\(baseURL)/get"
+        case .post: return "\(baseURL)/post"
         }
     }
     
@@ -27,6 +29,4 @@ enum MockProvider: Provider {
     static var name: String {
         return "MockProvider"
     }
-    
-    
 }
