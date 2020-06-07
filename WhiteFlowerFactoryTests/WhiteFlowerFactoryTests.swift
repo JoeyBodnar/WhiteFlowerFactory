@@ -61,7 +61,7 @@ class WhiteFlowerFactoryTests: XCTestCase {
         
         waitForExpectations(timeout: 10.0, handler: nil)
         XCTAssertTrue(expectedData != nil)
-        XCTAssertTrue(expectedData.url == "https://httpbin.org/get")
+        XCTAssertTrue(expectedData.url == "https://www.httpbin.org/get")
     }
     
     func testGetPlainUrlString() {
