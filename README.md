@@ -1,3 +1,5 @@
+![Unit tests](https://github.com/JoeyBodnar/WhiteFlowerFactory/workflows/Unit%20tests/badge.svg)
+
 WhiteFlowerFactory is a simple URLSession wrapper with support for both concurrent and serial request queues.
 
 ### Installation with Cocoapods
