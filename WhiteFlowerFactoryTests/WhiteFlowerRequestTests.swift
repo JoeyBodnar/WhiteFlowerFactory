@@ -103,4 +103,11 @@ class WhiteFlowerRequestTests: XCTestCase {
         XCTAssertTrue((json["param1"] as! String) == "value1")
         XCTAssertTrue((json["param2"] as! Int) == 2)
     }
+    
+    func testPassesCorrectHeaders() {
+        let request = WhiteFlowerRequest(method: .post, endPoint: MockProvider.post, params: [:], headers: [HTTPHeader(field: HTTPHeaderField.authorization, value: "Bearer abc")])
+        
+        let authHeader = request.headers!.filter { $0.field == HTTPHeaderField.authorization }.first!
+        XCTAssert(authHeader.value == "Bearer abc")
+    }
 }

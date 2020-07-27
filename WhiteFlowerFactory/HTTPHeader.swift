@@ -10,8 +10,8 @@ import Foundation
 
 public final class HTTPHeader {
     
-    let field: String
-    let value: String
+    public let field: String
+    public let value: String
     
     public init(field: String, value: String) {
         self.field = field
