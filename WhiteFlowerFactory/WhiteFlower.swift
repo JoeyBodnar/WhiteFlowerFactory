@@ -8,6 +8,13 @@
 
 import Foundation
 
+public protocol URLSessionProtocol {
+    
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol { }
+
 public typealias DataTaskCompletion = (APIResponse) -> Void
 
 public final class WhiteFlower {
@@ -15,12 +22,12 @@ public final class WhiteFlower {
     public static let shared = WhiteFlower()
     
     /// the URLSession to be used with this instance of WhiteFlower. Default is URLSession.shared
-    internal let session: URLSession
+    internal let session: URLSessionProtocol
     
     /// the queue where to receive callbacks. default is DispatchQueue.main
     internal let dispatchQueue: DispatchQueue
     
-    public init(session: URLSession = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
+    public init(session: URLSessionProtocol = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
         self.session = session
         self.dispatchQueue = dispatchQueue
     }
