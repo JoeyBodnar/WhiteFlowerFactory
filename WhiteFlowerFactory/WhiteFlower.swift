@@ -8,19 +8,35 @@
 
 import Foundation
 
+public protocol URLSessionDataTaskProtocol {
+    func resume()
+}
+
+extension URLSessionDataTask: URLSessionDataTaskProtocol { }
+
 public typealias DataTaskCompletion = (APIResponse) -> Void
+
+public protocol URLSessionProtocol {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol
+}
+
+extension URLSession: URLSessionProtocol {
+    public func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+        return (self.dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
+    }
+}
 
 public final class WhiteFlower {
     
     public static let shared = WhiteFlower()
     
     /// the URLSession to be used with this instance of WhiteFlower. Default is URLSession.shared
-    internal let session: URLSession
+    internal let session: URLSessionProtocol
     
     /// the queue where to receive callbacks. default is DispatchQueue.main
     internal let dispatchQueue: DispatchQueue
     
-    public init(session: URLSession = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
+    public init(session: URLSessionProtocol = URLSession.shared, dispatchQueue: DispatchQueue = .main) {
         self.session = session
         self.dispatchQueue = dispatchQueue
     }
