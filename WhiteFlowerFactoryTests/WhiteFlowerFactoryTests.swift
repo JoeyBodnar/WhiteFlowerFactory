@@ -8,16 +8,6 @@
 
 import XCTest
 
-
-
-final class MockSession: URLSessionProtocol {
-    
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        
-        return URLSessionDataTask()
-    }
-}
-
 class WhiteFlowerFactoryTests: XCTestCase {
 
     var expectation: XCTestExpectation!
@@ -29,7 +19,7 @@ class WhiteFlowerFactoryTests: XCTestCase {
     override func tearDown() {
         expectation = nil
     }
-    
+
     func testGetRequestStatusCode() {
         let request: WhiteFlowerRequest = WhiteFlowerRequest(method: .get, endPoint: MockProvider.get)
         var statusCode: Int = 0
