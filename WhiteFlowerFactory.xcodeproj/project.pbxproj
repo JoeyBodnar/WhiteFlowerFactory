@@ -46,14 +46,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9FCEE1D324D67B8D008C21A8 /* PBXContainerItemProxy */ = {
+		9FE98C6824D6903C00DBD935 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "WhiteFlowerFactory::WhiteFlowerFactory";
 			remoteInfo = WhiteFlowerFactory;
 		};
-		9FCEE1D424D67BA5008C21A8 /* PBXContainerItemProxy */ = {
+		9FE98C6924D6903C00DBD935 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -138,8 +138,8 @@
 		OBJ_34 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				"WhiteFlowerFactory::WhiteFlowerFactoryTests::Product" /* WhiteFlowerFactoryTests.xctest */,
 				"WhiteFlowerFactory::WhiteFlowerFactory::Product" /* WhiteFlowerFactory.framework */,
+				"WhiteFlowerFactory::WhiteFlowerFactoryTests::Product" /* WhiteFlowerFactoryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -319,12 +319,12 @@
 		OBJ_71 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WhiteFlowerFactory::WhiteFlowerFactoryTests" /* WhiteFlowerFactoryTests */;
-			targetProxy = 9FCEE1D424D67BA5008C21A8 /* PBXContainerItemProxy */;
+			targetProxy = 9FE98C6924D6903C00DBD935 /* PBXContainerItemProxy */;
 		};
 		OBJ_84 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "WhiteFlowerFactory::WhiteFlowerFactory" /* WhiteFlowerFactory */;
-			targetProxy = 9FCEE1D324D67B8D008C21A8 /* PBXContainerItemProxy */;
+			targetProxy = 9FE98C6824D6903C00DBD935 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
