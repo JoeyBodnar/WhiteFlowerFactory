@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import WhiteFlowerFactory
 
 class WhiteFlowerRequestTests: XCTestCase {
     

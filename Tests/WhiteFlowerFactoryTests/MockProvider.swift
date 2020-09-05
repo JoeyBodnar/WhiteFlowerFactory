@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import WhiteFlowerFactory
 
 enum MockProvider: Provider {
     
